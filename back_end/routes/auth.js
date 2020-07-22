@@ -69,7 +69,7 @@ router.post('/signup', async function (req, res, next) {
        */
       
       console.log('hiiiiiii')
-      const link = `http://${process.env.ipadress}:${process.env.port}/auth/verify/${body.email}`
+      const link = `http://10.0.2.2:5000/auth/verify/${body.email}`
         const resetEmail = {
           to: body.email,
           from: 'oohas1234@gmail.com',
@@ -127,7 +127,7 @@ router.post('/forgot', async (req, res, next) => {
         enter_user[0].save(function (err) {
           if (err) { return res.status(500).send({ msg: err.message }); }
         });
-        const link = `http://${process.env.ipadress}:${process.env.port}/auth/reset/${token}`
+        const link = `http://10.0.2.2:5000/auth/reset/${token}`
         const resetEmail = {
           to: enter_user[0].email,
           from: 'tunuguntlaooha1234@gmail.com',
@@ -252,7 +252,7 @@ router.get('/sendnotification', async function(req,res,next){
   //
   const paymentdetails=await payment.findOne({id:id});
   ispaid=paymentdetails['ispaid']
-  const link = `http://${process.env.ipadress}:${process.env.port}`
+  const link = `http://10.0.2.2:5000`
  if(ispaid) {
     const sendnotificationtodeliveryguy = {
     to: deliveryemail,

@@ -130,7 +130,7 @@ class _ResetPasswordState extends State<ResetPassword> {
           print(_email);
         
         print(DotEnv().env['ipadress']);
-         var url="http://"+DotEnv().env['ipadress']+":"+DotEnv().env['port']+"/auth/forgot";
+         var url="http://10.0.2.2:5000/auth/forgot";
          print(url);
      
     http.Response resp = await http.post(url,body: {'email':_email,});  // 10.0.2.2 for emulator

@@ -17,9 +17,9 @@ var usersRouter = require('./routes/users');
 var notificationsRouter=require('./routes/notification');
 var authRouter = require('./routes/auth');
 
-const dotenv = require("dotenv");
-dotenv.config()
-const uri = `${process.env.DB_key}`;
+// const dotenv = require("dotenv");
+// dotenv.config()
+const uri = `mongodb+srv://navya:8247079184@cluster0-7fzim.mongodb.net/Cachy_courrier?retryWrites=true&w=majority`;
 mongoose.connect(uri).then(
   _ => {
     console.info('Database connection stablished');
@@ -30,7 +30,7 @@ mongoose.connect(uri).then(
   }
 );
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 app.use(morgan('dev'));
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());

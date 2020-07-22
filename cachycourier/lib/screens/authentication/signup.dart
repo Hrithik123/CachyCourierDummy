@@ -259,7 +259,7 @@ class Signupstate extends State<Signup> {
         print(_email);
         print(_password);
         print(DotEnv().env['ipadress']);
-         var url="http://"+DotEnv().env['ipadress']+":"+DotEnv().env['port']+"/auth/signup";
+         var url="http://10.0.2.2:5000/auth/signup";
          print(url);
      
     http.Response resp = await http.post(url,body: {'email':_email,'password':_password});  // 10.0.2.2 for emulator

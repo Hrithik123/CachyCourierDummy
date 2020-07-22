@@ -87,9 +87,9 @@ class _UserPageState extends State<User> {
     Map<String, String> queryParameters={'email':'oohas1234@gmail.com'};
     print('helloo');
     try{
-       print(DotEnv().env['ipadress']);
+       print("10.0.2.2");
        print('hiiiii');
-      var url=DotEnv().env['ipadress']+":"+DotEnv().env['port'];
+      var url= '10.0.2.2:5000';
          print(url);
      
        var uri =Uri.http(url,'notifications', queryParameters);
